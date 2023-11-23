@@ -35,7 +35,7 @@ public class Employee {
     @NotBlank(message = "Email is a mandatory field")
     private String email;
 
-    @Pattern(regexp = "(\\8|9)[0-9]{7}", message = "Invalid phone number entered")
+    @Pattern(regexp = "(8|9)[0-9]{7}", message = "Invalid phone number entered")
     private String phoneNo;
 
     @Min(value = 1500, message = "Minimum salary starts from 1500")

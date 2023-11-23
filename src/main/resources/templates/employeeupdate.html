@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Employee</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <a th:href="@{/employees/list}" class="btn btn-primary">Back to Employee Listing</a>
+        <br><hr>
+
+        <h1>Update Employee</h1>
+        <br><hr>
+
+        <form method="POST" th:action="@{/employees/updateEmployee}" th:object="${employee}">
+            <div class="mb-3">
+                <label for="firstName" class="form-label">First Name</label>
+                <input type="text" class="form-control" name="firstName" th:field="*{firstName}"> 
+            </div>
+            <div class="alert alert-danger" th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}"></div>
+
+            <div class="mb-3">
+                <label for="lastName" class="form-label">Last Name</label>
+                <input type="text" class="form-control" name="lastName" th:field="*{lastName}">
+            </div>
+            <div class="alert alert-danger" th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"></div>
+
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" name="email" th:field="*{email}">
+            </div>
+            <div class="alert alert-danger" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></div>
+
+            <div class="mb-3">
+                <label for="phoneNo" class="form-label">Phone Number</label>
+                <input type="text" class="form-control" name="phoneNo" th:field="*{phoneNo}">
+            </div>
+            <div class="alert alert-danger" th:if="${#fields.hasErrors('phoneNo')}" th:errors="*{phoneNo}"></div>
+
+            <div class="mb-3">
+                <label for="salary" class="form-label">Salary</label>
+                <input type="number" class="form-control" name="salary" th:field="*{salary}">
+            </div>
+            <div class="alert alert-danger" th:if="${#fields.hasErrors('salary')}" th:errors="*{salary}"></div>
+
+            <div class="mb-3">
+                <label for="birthDay" class="form-label">Birth Date</label>
+                <input type="date" class="form-control" name="birthDay" th:field="*{birthDay}">
+            </div>
+            <div class="alert alert-danger" th:if="${#fields.hasErrors('birthDay')}" th:errors="*{birthDay}"></div>
+
+            <div class="mb-3">
+                <label for="postalCode" class="form-label">Postal Code</label>
+                <input type="number" class="form-control" name="postalCode" th:field="*{postalCode}">
+            </div>
+            <div class="alert alert-danger" th:if="${#fields.hasErrors('postalCode')}" th:errors="*{postalCode}"></div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
